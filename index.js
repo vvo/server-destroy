@@ -14,6 +14,6 @@ function enableDestroy(server) {
   server.destroy = function(cb) {
     server.close(cb);
     for (var key in connections)
-      connections[key].destroy();
+      connections[key].end();
   };
 }
